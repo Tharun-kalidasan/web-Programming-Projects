@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Registration Form</title>
+ <style>
+ body {
+ font-family: sans-serif;
+background-color: #f0f0f0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ margin: 0;
+ }
+form {
+ background-color: #d2b48c;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ width: 500px;
+ }
+ label {
+ display: block;
+ margin-bottom: 5px;
+ }
+ input[type="text"],
+ input[type="email"],
+ input[type="number"],
+select,
+ textarea {
+ width: calc(100% - 12px);
+ padding: 8px;
+ margin-bottom: 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+ }
+ .radio-group {
+ margin-bottom: 10px;
+ }
+ .radio-group label {
+ display: inline-block;
+ margin-right: 10px;
+ }
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-bottom: 10px;
+ }
+th, td {
+ border: 1px solid #ccc;
+ padding: 8px;
+ text-align: left;
+ }
+ .submit-reset{
+ text-align: center;
+ }
+ input[type="submit"], input[type="reset"]{
+ padding: 10px 20px;
+ background-color: #4CAF50; /* Green */
+ border: none;
+ color: white;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+ border-radius: 5px;
+ }
+ input[type="reset"]{
+ background-color: #f44336;
+}
+ </style>
+</head>
+<body>
+ <form>
+ <label for="fname">FIRST NAME (max 30 characters a-z and A-Z)</label>
+ <input type="text" id="fname" name="fname">
+ <label for="lname">LAST NAME (max 30 characters a-z and A-Z)</label>
+ <input type="text" id="lname" name="lname">
+ <div style="display: flex; align-items: center;">
+ <label for="dob" style="margin-right: 10px;">DATE OF BIRTH</label>
+ <select name="dob-day" style="margin-right: 10px;">
+ <option value="">Day</option>
+ <?php for ($i = 1; $i <= 31; $i++) {
+ echo "<option value=\"$i\">$i</option>";
+ } ?>
+ </select>
+ <select name="dob-month" style="margin-right: 5px;">
+ <option value="">Month</option>
+ <?php
+ $months = [
+ 'January', 'February', 'March', 'April', 'May', 'June','July', 'August', 'September', 'October', 'November', 'December'
+ ];
+ foreach ($months as $month) {
+ echo "<option value=\"$month\">$month</option>";
+ }
+ ?>
+ </select>
+ <select name="dob-year">
+ <option value="">Year</option>
+ <?php for ($i = date("Y"); $i >= date("Y") - 100; $i--) {
+ echo "<option value=\"$i\">$i</option>";
+ } ?>
+ </select>
+</div>
+ <label for="email">EMAIL ID</label>
+ <input type="email" id="email" name="email">
+ <label for="mobile">MOBILE NUMBER (10 digit number)</label>
+ <input type="number" id="mobile" name="mobile">
+ <div class="radio-group">
+ <label>GENDER</label>
+ <label><input type="radio" name="gender" value="male"> Male</label>
+ <label><input type="radio" name="gender" value="female"> Female</label>
+</div>
+ <label for="address">ADDRESS</label>
+ <textarea id="address" name="address"></textarea>
+ <label for="city">CITY (max 30 characters a-z and A-Z)</label>
+ <input type="text" id="city" name="city">
+ <label for="pincode">PIN CODE (6 digit number)</label>
+ <input type="number" id="pincode" name="pincode">
+ <label for="state">STATE (max 30 characters a-z and A-Z)</label>
+ <input type="text" id="state" name="state">
+ <label for="country">COUNTRY</label>
+ <input type="text" id="country" name="country" value="India" readonly>
+ <div style="display: flex; align-items: center; flex-wrap: wrap;">
+ <label style="margin-right: 10px; white-space: nowrap;">HOBBIES</label>
+ <div style="display: flex; flex-wrap: wrap;">
+ <label style="margin-right: 10px;"><input type="checkbox" name="hobbies[]"
+value="drawing" style="margin-right: 5px;"> Drawing</label>
+ <label style="margin-right: 10px;"><input type="checkbox" name="hobbies[]"
+value="singing" style="margin-right: 5px;"> Singing</label>
+<label style="margin-right: 10px;"><input type="checkbox" name="hobbies[]"
+value="dancing" style="margin-right: 5px;"> Dancing</label>
+ <label style="margin-right: 10px;"><input type="checkbox" name="hobbies[]"
+value="sketching" style="margin-right: 5px;"> Sketching</label>
+ <label style="display: flex; align-items: center;"><input type="checkbox"
+name="hobbies[]" value="others" style="margin-right: 5px;"> Others <input type="text"
+name="other_hobbies" style="margin-left: 5px;"></label>
+ </div>
+<div style="margin-bottom: 20px;">
+ <label style="display: block; margin-bottom: 5px;">QUALIFICATION</label>
+ <table style="width: 100%; border-collapse: collapse;">
+ <thead>
+ <tr>
+ <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Sl.No.</th>
+ <th style="border: 1px solid #ccc; padding: 8px; text-align:
+left;">Examination</th>
+ <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Board</th>
+ <th style="border: 1px solid #ccc; padding: 8px; text-align:
+left;">Percentage</th>
+ <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Year of
+Passing</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td style="border: 1px solid #ccc; padding: 8px;">1</td>
+<td style="border: 1px solid #ccc; padding: 8px;">Class X</td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="board1" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="percentage1" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="year1" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ </tr>
+ <tr>
+ <td style="border: 1px solid #ccc; padding: 8px;">2</td>
+ <td style="border: 1px solid #ccc; padding: 8px;">Class XII</td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="board2" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="percentage2" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="year2" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ </tr>
+ <tr>
+ <td style="border: 1px solid #ccc; padding: 8px;">3</td>
+ <td style="border: 1px solid #ccc; padding: 8px;">Graduation</td>
+<td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="board3" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="percentage3" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="year3" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ </tr>
+ <tr>
+ <td style="border: 1px solid #ccc; padding: 8px;">4</td>
+ <td style="border: 1px solid #ccc; padding: 8px;">Masters</td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="board4" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="percentage4" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ <td style="border: 1px solid #ccc; padding: 8px;"><input type="text"
+name="year4" style="width: calc(100% - 16px); padding: 5px; box-sizing: borderbox;"></td>
+ </tr>
+ </tbody>
+ </table>
+ <div style="text-align: center; margin-top: 5px;">
+ <span style="margin-right: 20px;">(10 char max)</span>
+ <span>(upto 2 decimal)</span>
+</div>
+</div>
+ <label>COURSES APPLIED FOR</label>
+ <label><input type="radio" name="course" value="bca"> BCA</label>
+ <label><input type="radio" name="course" value="bcom"> B.Com</label>
+ <label><input type="radio" name="course" value="bsc"> B.Sc</label>
+ <label><input type="radio" name="course" value="ba"> BA</label>
+ <div class="submit-reset">
+ <input type="submit" value="Submit">
+ <input type="reset" value="Reset">
+ </div>
+ </form>
+</body>
+</html>

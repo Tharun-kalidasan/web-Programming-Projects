@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .blog img, .blog iframe {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        footer form input, footer form textarea, footer form button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+        footer form button {
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+        footer form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Webpage</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#navigation">Navigation</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<div class="container">
+    <div id="home" class="section">
+        <h2>Home Page</h2>
+        <p>
+            Welcome to my personal webpage! This site is a collection of my work, ideas, and hobbies. Explore the different sections to learn more about my projects, read my blog, and get in touch with me.
+        </p>
+    </div>
+
+    <div id="navigation" class="section">
+        <h2>Navigation Page</h2>
+        <ul>
+            <li><a href="1A.html" target="_blank">Module 2 Activity 1</a></li>
+            <li><a href="SolarSystem.html" target="_blank">Module 2 Activity 2</a></li>
+            <li><a href="1C.html" target="_blank">Module 2 Activity 3</a></li>
+            <li><a href="1D.html" target="_blank">Module 2 Activity 4</a></li>
+        </ul>
+    </div>
+
+    <div id="blog" class="section blog">
+        <h2>Blog Page</h2>
+        <p>
+            Here is one of my new webpage about myself shared through photo :
+        </p>
+        <img src="myphoto.jpg" alt="A snapshot of my project">
+        </p>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>
+            Reach out to me using the form below:
+        </p>
+    </div>
+</div>
+
+<footer>
+    <h3>Contact Me</h3>
+    <form action="submit_form.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</footer>
+
+</body>
+</html>
